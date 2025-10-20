@@ -1,0 +1,83 @@
+/* Carousel{
+     padding-top:150px ;
+}
+
+
+.img1{
+ 
+ width: 100vw;      
+  height: 89vh;      
+  object-fit: cover; 
+}
+.img2{
+ 
+ width: 100vw;      
+  height: 89vh;      
+  object-fit: cover; 
+}
+.img3{
+ 
+   width: 100vw;      
+  height: 89vh;      
+  object-fit: cover; 
+}
+.img6{
+ 
+   width: 100vw;      
+  height: 89vh;      
+  object-fit: cover; 
+}
+.img8{
+ 
+    width: 100vw;      
+  height: 89vh;      
+  object-fit: cover; 
+} */
+
+.Carousel {
+  padding-top: 150px;
+}
+
+/* Default (large desktop) */
+.img1, .img2, .img3, .img6, .img8 {
+  width: 100vw;
+  height: 89vh;
+  object-fit: cover;
+}
+
+/* 1280px screens (laptops / smaller desktops) */
+@media (max-width: 1280px) {
+  .img1, .img2, .img3, .img6, .img8 {
+    height: 80vh;  /* reduce height slightly */
+  }
+}
+
+/* 1024px screens (tablet landscape, iPad) */
+@media (max-width: 1024px) {
+  .img1, .img2, .img3, .img6, .img8 {
+    height: 70vh;
+  }
+  .Carousel {
+    padding-top: 100px; /* less padding for smaller screen */
+  }
+}
+
+/* 800px screens (tablet portrait / small laptops) */
+@media (max-width: 800px) {
+  .img1, .img2, .img3, .img6, .img8 {
+    height: 60vh;
+  }
+  .Carousel {
+    padding-top: 80px;
+  }
+}
+
+/* 500px screens (mobile phones) */
+@media (max-width: 500px) {
+  .img1, .img2, .img3, .img6, .img8 {
+    height: 40vh;
+  }
+  .Carousel {
+    padding-top: 60px;
+  }
+}

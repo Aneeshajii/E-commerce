@@ -1,0 +1,34 @@
+/* --- ENHANCED .main2 for SMOOTHNESS and better content flow --- */
+.main2{
+    width: 100%; 
+    height: 89vh; 
+    object-fit: cover; 
+    padding-top: 1250px; /* Original huge padding retained */
+    transition: padding-top 0.4s ease-in-out; 
+}
+.mainimg{
+    width: 100%;
+    filter: brightness(0.98); 
+    transition: filter 0.3s ease-in-out;
+}
+.main2 h2{
+    /* ... (Heading styles and animation retained and enhanced for smoothness) ... */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    animation: scroll-left 12s linear infinite; /* Slower, smoother animation */
+    transition: font-size 0.3s ease-in-out, padding-left 0.3s ease-in-out;
+}
+/* ... (Keyframes and spans remain the same) ... */
+
+/* --- .main2 Media Query adjustments (Retaining Original Padding/Margin values) --- */
+@media (max-width: 1280px) {
+    .main2 { padding-top: 1100px; }
+}
+@media (max-width: 1024px) {
+    .main2 { padding-top: 940px; }
+}
+@media (max-width: 800px) {
+    .main2 { padding-top: 760px; }
+}
+@media (max-width: 500px) {
+    .main2 { padding-top: 1300px; }
+}

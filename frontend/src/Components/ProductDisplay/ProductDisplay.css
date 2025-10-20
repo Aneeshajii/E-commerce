@@ -1,0 +1,341 @@
+.ProductDisplay {
+    display: flex;
+    margin: 0px 170px;
+    height: 90vh;
+    margin-top: 50px;
+}
+
+.productleft {
+    display: flex;
+    gap: 17px;
+}
+
+.product-img-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.product-img-list img {
+    height: 128px;
+}
+
+.productdisplay-main-img {
+    width: 456px;
+    height: 560px;
+}
+
+.productright {
+    /* height: 40vh; */
+    margin: 0px 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+.productright h1 {
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.productdisplay-right-prices {
+    display: flex;
+    margin: 40px 0px;
+    gap: 30px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.productdisplay-right-oldprice {
+    color: #818181;
+    text-decoration: line-through;
+}
+
+.productdisplay-right-newprice {
+    color: blue;
+}
+
+.productdisplay-right-size h1 {
+    margin-top: 25px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.productdisplay-right-size {
+    display: flex;
+    flex-direction: column;
+    /* keeps heading + sizes vertically stacked */
+    margin: 35px 0px;
+    gap: 20px;
+}
+
+/* ✅ add this: ensures sizes are in one straight line */
+.productdisplay-right-sizes {
+    display: flex;
+    gap: 15px;
+    /* space between size boxes */
+    flex-wrap: wrap;
+    /* optional: wraps to next line on small screens */
+    align-items: center;
+}
+
+.productdisplay-right-sizes div {
+    padding: 8px 15px;
+    background-color: aliceblue;
+    border: 1px solid wheat;
+    border-radius: 3px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+/* optional hover effect */
+.productdisplay-right-sizes div:hover {
+    background-color: rgb(235, 235, 235);
+    border-color: #ccc;
+}
+
+/* .productdisplay-right-size{ display: flex; margin: 35px 0px; gap: 20px; } .productdisplay-right-sizes div{ padding: 5px 2px; background-color: aliceblue; border: 1px solid wheat; border-radius: 3px; cursor: pointer; text-align: center; } */
+.productright button {
+    padding: 20px 40px;
+    width: 200px;
+    font-size: 16px;
+    font-weight: 600;
+    color: antiquewhite;
+    background: rgb(72, 1, 1);
+    margin-bottom: 40px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    /* margin-top: -50px; */
+}
+
+@media(max-width:1280px) {
+    .ProductDisplay {
+        display: flex;
+        margin: 0px 80px;
+        height: 100vh;
+        margin-top: 50px;
+    }
+
+    .productleft {
+        gap: 10px;
+    }
+
+    .product-img-list {
+        gap: 10px;
+    }
+
+    .product-img-list img {
+        height: 120px;
+    }
+
+    .productdisplay-main-img {
+        width: auto;
+        height: 510px;
+    }
+
+    .productright {
+        margin: 0px 60px;
+    }
+
+    .productright h1 {
+        font-size: 22px;
+    }
+
+    .productdisplay-right-prices {
+        margin: 14px 0px;
+        font-size: 18px;
+    }
+
+    .productdisplay-right-size h1 {
+        margin-top: 40px;
+        font-size: 20px;
+    }
+
+    .productdisplay-right-sizes div {
+        padding: 12px 16px;
+    }
+
+    .productright button {
+        width: 190px;
+        padding: 15px 0px;
+    }
+}
+
+@media(max-width:1024px) {
+    .ProductDisplay {
+        display: flex;
+        margin: 0px 35px;
+        height: 70vh;
+        margin-top: 50px;
+    }
+
+    .productleft {
+        gap: 5px;
+    }
+
+    .product-img-list img {
+        height: 80px;
+    }
+
+    .productdisplay-main-img {
+        height: 350px;
+    }
+
+    .productright h1 {
+        font-size: 18px;
+    }
+
+    .productdisplay-right-description {
+        font-size: 12px;
+    }
+
+    .productdisplay-right-sizes {
+        margin: -10px 0px;
+    }
+
+    .productdisplay-right-size h1 {
+        margin-top: 20px;
+    }
+
+    .productdisplay-right-sizes div {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .productright button {
+        width: 140px;
+        padding: 10px 0px;
+    }
+}
+
+/* ✅ Tablet View (max-width: 800px) */
+@media (max-width: 800px) {
+  .ProductDisplay {
+    flex-direction: column;
+    margin: 0px 40px;
+    height: auto;
+    margin-top: 30px;
+    align-items: center;
+  }
+
+  /* ⬇️ Change order: main image first, then mini images */
+  .productleft {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .productdisplay-img {
+    order: 1; /* main image first */
+  }
+
+  .product-img-list {
+    order: 2; /* mini images after main */
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .product-img-list img {
+    height: 70px;
+  }
+
+  .productdisplay-main-img {
+    width: 300px;
+    height: 360px;
+  }
+
+  .productright {
+    margin: 30px 0px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .productright h1 {
+    font-size: 20px;
+  }
+
+  .productdisplay-right-prices {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  .productdisplay-right-size h1 {
+    font-size: 18px;
+  }
+
+  .productdisplay-right-sizes {
+    justify-content: center;
+  }
+
+  .productdisplay-right-sizes div {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .productright button {
+    width: 160px;
+    padding: 12px 0;
+  }
+}
+
+/* ✅ Mobile View (max-width: 500px) */
+@media (max-width: 500px) {
+  .ProductDisplay {
+    /* margin-top: 40px; */
+   
+    margin: 0px 15px;
+      margin-top: 40px; /* ✅ Adds gap below Navbar */
+  }
+
+  /* Same order change for mobile */
+  .productleft {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .productdisplay-img {
+    order: 1;
+  }
+
+  .product-img-list {
+    order: 2;
+    flex-direction: row;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .product-img-list img {
+    height: 60px;
+  }
+
+  .productdisplay-main-img {
+    width: 250px;
+    height: 300px;
+  }
+
+  .productright h1 {
+    font-size: 16px;
+  }
+
+  .productdisplay-right-prices {
+    font-size: 16px;
+  }
+
+  .productdisplay-right-sizes div {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .productright button {
+    width: 140px;
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}

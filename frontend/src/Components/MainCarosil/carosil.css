@@ -1,0 +1,65 @@
+/* BASE STYLES */
+
+/* The Carousel container itself */
+.Carousel {
+    padding-top: 150px;
+}
+
+/* Default (large desktop) */
+.img1, .img2, .img3, .img6, .img8 {
+    width: 100vw;
+    height: 89vh;
+    /* Core visual enhancements for crisp, smooth rendering */
+    object-fit: cover;
+    image-rendering: optimizeQuality; /* Ensures high quality image display */
+    
+    /* Subtle animation and style additions */
+    filter: brightness(0.95); /* Slightly reduces brightness for a softer look */
+    transition: transform 0.6s ease-out, filter 0.3s ease-in-out; /* Smooth transition for visual changes */
+}
+
+/* HOVER EFFECT (Standard High-Quality Animation) */
+.img1:hover, .img2:hover, .img3:hover, .img6:hover, .img8:hover {
+    filter: brightness(1.05); /* Slightly brightens on hover */
+    transform: scale(1.01); /* Very subtle zoom effect to draw attention */
+    cursor: pointer; /* Indicates interactivity */
+}
+
+/* RESPONSIVE MEDIA QUERIES (NO CHANGE IN VALUES) */
+
+/* 1280px screens (laptops / smaller desktops) */
+@media (max-width: 1280px) {
+    .img1, .img2, .img3, .img6, .img8 {
+        height: 80vh; 
+    }
+}
+
+/* 1024px screens (tablet landscape, iPad) */
+@media (max-width: 1024px) {
+    .img1, .img2, .img3, .img6, .img8 {
+        height: 70vh;
+    }
+    .Carousel {
+        padding-top: 100px;
+    }
+}
+
+/* 800px screens (tablet portrait / small laptops) */
+@media (max-width: 800px) {
+    .img1, .img2, .img3, .img6, .img8 {
+        height: 60vh;
+    }
+    .Carousel {
+        padding-top: 80px;
+    }
+}
+
+/* 500px screens (mobile phones) */
+@media (max-width: 500px) {
+    .img1, .img2, .img3, .img6, .img8 {
+        height: 40vh;
+    }
+    .Carousel {
+        padding-top: 60px;
+    }
+}

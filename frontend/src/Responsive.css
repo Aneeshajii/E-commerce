@@ -1,0 +1,129 @@
+/* ------------------ GLOBAL BREAKPOINTS ------------------ */
+
+/* Default: Desktop (>=1280px) */
+body {
+  font-size: 16px;
+}
+
+/* ------------------ 1280px (Laptop/Desktop smaller) ------------------ */
+@media (max-width: 1280px) {
+  .main2 {
+    padding-top: 1000px; /* reduce padding */
+    height: 75vh;
+  }
+
+  .collections, .popularitems {
+    grid-template-columns: 1fr 1fr 1fr; /* 3 items per row */
+  }
+
+  .ProductDisplay {
+    margin: 0px 100px;
+  }
+  .productdisplay-main-img {
+    width: 380px;
+    height: 500px;
+  }
+}
+
+/* ------------------ 1024px (Tablet Landscape, iPad Pro) ------------------ */
+@media (max-width: 1024px) {
+  .main2 {
+    padding-top: 700px;
+    height: 65vh;
+  }
+
+  .collections, .popularitems {
+    grid-template-columns: 1fr 1fr 1fr; /* still 3 */
+  }
+
+  .ProductDisplay {
+    margin: 0px 50px;
+    flex-direction: column; /* stack on tablet */
+    height: auto;
+    gap: 30px;
+  }
+  .productleft, .productright {
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .productdisplay-main-img {
+    width: 300px;
+    height: auto;
+  }
+}
+
+/* ------------------ 800px (Tablet Portrait / Small Laptop) ------------------ */
+@media (max-width: 800px) {
+  .main2 {
+    padding-top: 500px;
+    height: 55vh;
+  }
+
+  .collections, .popularitems {
+    grid-template-columns: 1fr 1fr; /* 2 items per row */
+  }
+
+  .Newcollection, .popular {
+    padding: 0 20px;
+  }
+
+  .ProductDisplay {
+    margin: 0 20px;
+  }
+  .productdisplay-main-img {
+    width: 250px;
+  }
+  .productright h1 {
+    font-size: 20px;
+  }
+  .productdisplay-right-prices {
+    font-size: 18px;
+  }
+  .productright button {
+    width: 100%;
+  }
+
+  footer .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ------------------ 500px (Mobile phones) ------------------ */
+@media (max-width: 500px) {
+  .main2 {
+    padding-top: 300px;
+    height: 40vh;
+  }
+  .main2 h2 {
+    font-size: 16px;
+    left: 0;
+  }
+
+  .collections, .popularitems {
+    grid-template-columns: 1fr; /* single column */
+  }
+
+  .ProductDisplay {
+    flex-direction: column;
+    margin: 10px;
+  }
+  .productdisplay-main-img {
+    width: 90%;
+    height: auto;
+  }
+  .productdisplay-right-prices {
+    font-size: 16px;
+  }
+
+  footer .footer-container {
+    padding: 20px;
+  }
+  .footer-column h3 {
+    font-size: 14px;
+  }
+  .footer-column ul li a {
+    font-size: 12px;
+  }
+}

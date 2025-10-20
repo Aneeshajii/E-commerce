@@ -1,0 +1,214 @@
+/* BASE STYLES ENHANCEMENT */
+
+.Navbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+    /* ENHANCEMENT: Smoother, subtler shadow for depth and sticky position */
+    box-shadow: 0 4px 6px -6px rgba(0, 0, 0, 0.1), 0 1px 3px -2px rgba(0, 0, 0, 0.05); 
+    background-color: white; /* Explicit white background for clarity */
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+
+.Navlogo {
+    display: flex;
+    align-items: center;
+    /* FIX: Corrected gap to a unit value (e.g., 10px) - was 'gap: 1;' */
+    gap: 10px; 
+    transition: transform 0.3s ease; /* Transition already present, kept here */
+}
+
+.Navlogo:hover {
+    transform: scale(1.02); 
+}
+.Navlogo p {
+    color: rgb(63, 63, 61);
+    font-size: 32px;
+    font-weight: 700; /* Added: Bolder text for better brand visibility */
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 50px;
+    color: rgb(46, 138, 138);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    cursor: pointer;
+    /* ENHANCEMENT: Add transitions for hover effects */
+    transition: color 0.3s ease, transform 0.1s ease;
+}
+/* ENHANCEMENT: Subtle lift on hover */
+.menu li:hover {
+    transform: translateY(-2px); 
+    color: #2e8a8a; /* Subtle color shift */
+}
+
+.menu li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu li.active {
+    background-color: rgba(56, 43, 43, 0.1);
+    color: #4b4949;
+    font-weight: bold;
+}
+/* ENHANCEMENT: Custom Underline Indicator (Active/Hover) */
+.menu li::after {
+    content: "";
+    width: 0;
+    height: 3px; 
+    background: rgb(46, 138, 138); 
+    transition: width 0.3s ease-in-out; /* Smooth underline animation */
+}
+.menu li:hover::after, .menu li.active::after {
+    width: 100%;
+}
+
+
+.navlogincart {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    /* ENHANCEMENT: Set position relative for cart count */
+    position: relative; 
+}
+/* ENHANCEMENT: Ensure icon container is relative */
+.navlogincart > a {
+    position: relative;
+    display: block; 
+}
+
+.navlogincart button {
+    width: 115px;
+    height: 39px;
+    outline: none;
+    border-radius: 22px;
+    border: 1px solid #7a7a7a;
+    color: rgb(13, 13, 13);
+    font-style: normal;
+    font-weight: 400; /* Adjusted for better readability */
+    cursor: pointer;
+    font-size: 18px;
+    background: transparent;
+    /* ENHANCEMENT: Smooth transition for hover/active states */
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.navlogincart button:hover {
+    background: rgba(122, 122, 122, 0.1); 
+}
+
+.navlogincart button:active {
+    background: rgb(179, 179, 183);
+    transform: scale(0.98); /* Subtle press-down effect */
+}
+
+.cartcount {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* FIX: Remove marginal positioning and use absolute */
+    /* REMOVED: margin-top: -35px; margin-left: -55px; */
+    border-radius: 11px;
+    font-size: 14px;
+    background: red;
+    color: white;
+    
+    /* FIX: Absolute positioning relative to the cart icon's parent 'a' tag */
+    position: absolute; 
+    top: -10px; 
+    right: -10px; 
+    z-index: 10;
+    /* ENHANCEMENT: Transition for cart count visibility/pop */
+    transition: transform 0.2s ease-out; 
+}
+.cartcount:hover {
+    transform: scale(1.1); /* Small pop effect on hover */
+}
+
+.menu li {
+    padding: 8px 16px;
+    border-radius: 6px;
+    /* Replaced with multi-property transition above for consistency */
+}
+
+
+.nav-menu {
+    /* FIX: Ensure menu icon is hidden by default on large screens */
+    display: none; 
+    transition: transform 0.3s ease; /* ENHANCEMENT: Smooth rotation */
+}
+
+/* MEDIA QUERIES (Responsiveness) */
+/* Only includes necessary overrides for cart/menu fixes and inherited transitions */
+
+@media(max-width:1280px) {
+    /* ... existing styles ... */
+
+    /* Cart count positioning inherited from base, only size changes apply */
+    .cartcount {
+        width: 18px;
+        height: 18px;
+        font-size: 12px;
+        /* Re-position for smaller size if necessary, otherwise it inherits the absolute right/top */
+        top: -8px; 
+        right: -8px; 
+    }
+}
+
+@media(max-width:1024px) {
+    /* ... existing styles ... */
+    
+    .navlogincart img {
+        width: 30px;
+    }
+}
+
+@media(max-width:800px) {
+    .Navbar {
+        /* ... existing styles ... */
+    }
+    
+    .nav-menu {
+        display: block; /* Show the menu icon on mobile */
+    }
+    .nav-menu.open {
+        transform: rotate(90deg);
+    }
+    
+    /* Menu dropdown */
+    .menu {
+        /* ENHANCEMENT: Add subtle box-shadow transition for dropdown opening */
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); 
+        transition: top 0.3s ease, background 0.3s ease;
+    }
+    
+    /* FIX: Use inherited absolute positioning for cartcount and simplify mobile override */
+    .cartcount {
+        /* Removed complex top/right overrides */
+        top: -8px;
+        right: -8px;
+        border-radius: 50%;
+    }
+    
+    /* Hide custom underline on mobile dropdown */
+    .menu li::after {
+        display: none;
+    }
+}
+/* ... existing styles ... */

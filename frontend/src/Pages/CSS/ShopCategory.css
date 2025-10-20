@@ -1,0 +1,34 @@
+.productcategory{
+   
+    padding-left: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    row-gap: 80px;
+   
+}
+.ShopCategory{
+    margin-bottom:23px;
+}
+@media(max-width:1280px){
+    .productcategory{
+        width: 90%;
+        margin: 10px auto;
+        row-gap: 40px;
+    }
+    /* .productcategory .item{
+      
+    } */
+}
+@media(max-width:800px){
+     .productcategory{
+        width: 95%;
+     }
+     
+}
+@media(max-width:500px){
+     .productcategory{
+        grid-template-columns: 1fr 1fr;
+        margin: auto;
+     }
+     
+}
